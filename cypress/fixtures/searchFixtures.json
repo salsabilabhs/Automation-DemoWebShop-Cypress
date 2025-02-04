@@ -1,5 +1,19 @@
 {
-    "valid_search":"Health Book",
-    "invalid_search":"",
-    "not_found_search":"o,Tuan"
+    "valid_inputs":[
+        "Copy of Computing and Internet EX", 
+        "Desktop PC with CDRW",
+        "Digital SLR Camera 12.2 Mpixel",
+        "Custom T-Shirt",
+        "Music 2",
+        "Vintage Style Three Stone Diamond Engagement Ring",
+        "$50 Physical Gift Card"
+    ],
+    "space_input":"                       ",
+    "not_exist_input":"Nina Book",
+
+
+    
+    "empty_field_msg":"Please enter some search keyword",
+    "invalid_search_msg":"Search term minimum length is 3 characters",
+    "result_not_found_msg": "No products were found that matched your criteria."
 }

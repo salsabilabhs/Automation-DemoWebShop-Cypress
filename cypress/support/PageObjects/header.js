@@ -1,4 +1,5 @@
 class header {
+    // ELEMENT
     logo="[class='header-logo']"
     register="[class='ico-register']"
     login="[class='ico-login']"
@@ -9,6 +10,7 @@ class header {
     search_field="[id='small-searchterms']"
     search_btn="[class='button-1 search-box-button']"
 
+    // VERIFY & INTERACTION WITH ELEMENT
     verify_logo() {
         cy.get(this.logo).should('be.visible')
     }
@@ -39,6 +41,10 @@ class header {
 
     verify_searchfield() {
         cy.get(this.search_field).should('be.visible')
+    }
+
+    fill_searchfield(value) {
+        cy.get(this.search_field).type(value)
     }
 
     click_search() {
