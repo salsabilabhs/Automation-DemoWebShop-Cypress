@@ -1,10 +1,10 @@
 # Automation-DemoWebShop-Cypress
 
-Testing Framework : Cypress v13.15.0
+**Testing Framework :** Cypress v13.15.0
 
-What To Test? https://demowebshop.tricentis.com/
+**What To Test?** https://demowebshop.tricentis.com/
 
-Test Case :
+**Test Case :**
 [SEARCH FEATURE]
 1. Search Book by Valid Inputs
 2. Search Computers by Valid Inputs
@@ -17,6 +17,6 @@ Test Case :
 9. Search by Invalid Space Input
 10. Search When Data User Searched Doesn't Exist
 
-How To Running The Code?
+**How To Running The Code?**
 1. Use command npx cypress open
 2. Click file *.cy.js file to run
