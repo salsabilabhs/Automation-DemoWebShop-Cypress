@@ -4,7 +4,7 @@ import searchPage from "../support/PageObjects/searchPage"
 describe("Search Feature", () => {
 
     beforeEach(() => {
-        cy.visit("")
+        cy.open_demowebshop()
     })
 
     it("Search - Search Book by Valid Inputs", () => {
@@ -35,7 +35,7 @@ describe("Search Feature", () => {
         })
     })
 
-    it("Search - Search Electronics by Valid Inputs", () => {
+    it.only("Search - Search Electronics by Valid Inputs", () => {
         cy.fixture('searchFixtures').then((data) => {
             header.verify_searchfield()
             header.fill_searchfield(data.valid_inputs[2])
