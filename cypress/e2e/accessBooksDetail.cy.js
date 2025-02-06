@@ -1,14 +1,13 @@
-import menu from "../support/PageObjects/menu"
-import categories from "../support/PageObjects/categories"
 import booksPage from "../support/PageObjects/booksPage"
+import books_detailPage from "../support/PageObjects/books_detailPage"
 
-describe('Access Books Category', () => {
+describe('Access Books Detail', () => {
     
     beforeEach(()=> {
-        cy.open_demowebshop()
+        cy.visit('/books')
     })
 
-    it('Access Books Page Category by Click on Top Menu', () => {
+    it('Access Books Detail by Click on Procuct Picture', () => {
         menu.click_books()
         
         booksPage.verify_booksUrl()

@@ -8,6 +8,8 @@ class booksPage {
     filterbyprice_txt="[class='filter-title']"
     all_products="[class='product-grid']"
     product="[class='product-item']"
+    product_picture="body > div.master-wrapper-page > div.master-wrapper-content > div.master-wrapper-main > div.center-2 > div.page.category-page > div.page-body > div.product-grid > div:nth-child(1) > div > div.picture > a"
+    product_name="body > div.master-wrapper-page > div.master-wrapper-content > div.master-wrapper-main > div.center-2 > div.page.category-page > div.page-body > div.product-grid > div:nth-child(1) > div > div.details > h2 > a"
     addtocart_btn="body > div.master-wrapper-page > div.master-wrapper-content > div.master-wrapper-main > div.center-2 > div.page.category-page > div.page-body > div.product-grid > div:nth-child(1) > div > div.details > div.add-info > div.buttons > input"
 
     // VERIFY & INTERACT WITH ELEMENT
@@ -16,10 +18,12 @@ class booksPage {
     }
 
     verify_breadcrumbs() {
+        cy.get(this.breadcrumbs).should('be.visible')
         cy.get(this.breadcrumbs).should('have.text', 'Books')
     }
 
     verify_title() {
+        cy.get(this.title).should('be.visible')
         cy.get(this.title).should('have.text', 'Books')
     }
 
@@ -47,8 +51,12 @@ class booksPage {
         cy.get(this.product).should('be.visible')
     }
 
-    click_product() {
-        cy.get(this.product).click()
+    click_product_picture() {
+        cy.get(this.product_picture).click()
+    }
+
+    click_product_name() {
+        cy.get(this.product_name).click()
     }
 
     verify_addtocart_btn() {
