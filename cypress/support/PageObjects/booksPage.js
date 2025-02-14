@@ -66,5 +66,9 @@ class booksPage {
     click_addtocart_btn() {
         cy.get(this.addtocart_btn).click()
     }
+
+    get_productname(name) {
+        cy.get(this.product_name).should('have.text', name)
+    }
 }
 module.exports = new booksPage()

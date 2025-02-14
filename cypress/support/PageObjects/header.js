@@ -4,11 +4,13 @@ class header {
     register="[class='ico-register']"
     login="[class='ico-login']"
     shopping_cart="[id='topcartlink']"
-    shopping_cart_counter="class='cart-qty']"
+    shopping_cart_counter='[class="cart-qty"]'
     wishlist="[class='cart-label']"
     wishlist_counter="[class='wishlist-qty']"
     search_field="[id='small-searchterms']"
     search_btn="[class='button-1 search-box-button']"
+
+    notification_addtocart_success='[class="bar-notification success"]'
 
     // VERIFY & INTERACTION WITH ELEMENT
     verify_logo() {
@@ -27,8 +29,11 @@ class header {
         cy.get(this.shopping_cart).click()
     }
 
-    getcounter_shoppingcart(value_shoppingcart) {
-        cy.get(this.shopping_cart_counter).should('contain.text', value_shoppingcart)
+    getcounter_shoppingcart() {
+        return cy.get(this.shopping_cart_counter).invoke('text').then((text) => {
+            const cleanedText = text.replace(/[()]/g, '').trim()    // Hapus semua non-angka
+            return parseInt(cleanedText) || 0   // Konversi ke angka, default 0 jika kosong
+        })
     }
 
     click_wishlist() {
@@ -49,6 +54,16 @@ class header {
 
     click_search() {
         cy.get(this.search_btn).click()
+    }
+
+    verify_success_bar() {
+        cy.get(this.notification_addtocart_success)
+    }
+
+    verify_success_addtocart_msg(success_addtocart_msg) {
+        cy.get(this.notification_addtocart_success).invoke('text').then((text) => {
+          expect(text.trim()).to.equal(success_addtocart_msg);
+        });
     }
 }
 module.exports = new header()
