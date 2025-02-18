@@ -12,5 +12,6 @@ class categories {
     click_books() {
         cy.get(this.books).click()
     }
+    
 }
 module.exports = new categories()

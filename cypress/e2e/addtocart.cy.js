@@ -1,7 +1,7 @@
 import books_detailPage from "../support/PageObjects/books_detailPage"
 import booksPage from "../support/PageObjects/booksPage"
 import header from "../support/PageObjects/header"
-import shoppingcartPage from "../support/PageObjects/shoppingcartPage"
+import shoppingcartPage, { get_price } from "../support/PageObjects/shoppingcartPage"
 
 describe('Add To Cart Features', () => {
 
@@ -29,7 +29,7 @@ describe('Add To Cart Features', () => {
         })
     })
 
-    it('Add To Cart Books Category from Detail Product', () => {
+    it.only('Add To Cart Books Category from Detail Product', () => {
         cy.visit('/computing-and-internet')
         cy.fixture('addtocartFixtures').then((data) => {
             books_detailPage.verify_qtyfield()
@@ -52,6 +52,8 @@ describe('Add To Cart Features', () => {
             shoppingcartPage.verify_producttable()
             shoppingcartPage.verify_productname(data.product_name)
             shoppingcartPage.verify_qty(data.qty)
+
+            shoppingcartPage.get_price()
         })
 
     })
